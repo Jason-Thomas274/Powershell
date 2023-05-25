@@ -47,7 +47,7 @@ If($ComputerVersion -ne "true")
        }
 }
 
-#Verify that the module installed, type the following command to see all the commands of the module
-#Get-Command -Module PSWindowsUpdate
+# Verify that the module installed, type the following command to see all the commands of the module
+# Get-Command -Module PSWindowsUpdate
 
 
