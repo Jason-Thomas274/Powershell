@@ -1,4 +1,4 @@
-$printers = @("10.58.31.235", "10.58.30.238")
+$printers = @("10.0.0.0", "10.0.0.0")
 $printers.count
 
 foreach ($printer in $printers)
@@ -14,7 +14,7 @@ foreach ($printer in $printers)
 }
 PowerShell -NoExit
 #$printers.count
-$printers = @("10.58.31.235", "10.58.30.238")
+$printers = @("10.0.0.0", "10.0.0.0")
 $printers_online =@()
 $printers_offline = @()
 
