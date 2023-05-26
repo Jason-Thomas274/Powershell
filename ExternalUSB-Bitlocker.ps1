@@ -12,7 +12,7 @@ Get-ChildItem
 
 #Change path to priviledged profile -> confirmation -> used for later recovery key location export
 $CurrentUser = read-host `n"Enter the current user name from list"   
-$Path = set-location "C:\Users\$CurrentUser\OneDrive - Greystar\Documents"
+$Path = set-location "C:\Users\$CurrentUser\OneDrive - NAME\Documents" # change "NAME" to location
 #Verify current external USB drives connected to physical host
 $ExternalDrives = gwmi win32_diskdrive | ?{$_.interfacetype -eq "USB"} | %{gwmi -Query "ASSOCIATORS OF {Win32_DiskDrive.DeviceID=`"$($_.DeviceID.replace('\','\\'))`"} WHERE AssocClass = Win32_DiskDriveToDiskPartition"} |  %{gwmi -Query "ASSOCIATORS OF {Win32_DiskPartition.DeviceID=`"$($_.DeviceID)`"} WHERE AssocClass = Win32_LogicalDiskToPartition"} | %{$_.deviceid}
 #Write to console -> request user input selection for drive letter
