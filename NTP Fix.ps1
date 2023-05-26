@@ -1,3 +1,4 @@
+#NTP Resync
 Begin {
     $path = "HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Parameters"
     $ServiceName = 'tzautoupdate'
