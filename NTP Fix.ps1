@@ -1,4 +1,14 @@
-#NTP Resync
+<#
+.SYNOPSIS
+    -Useful for resolving Network Time Protocol issues with syncing which cause breaking of applications utilizing this service
+    -Adjusts based on location to update/resync
+    -Changes CMOS clock to NTP windows server for updates
+.NOTES
+    Author: Jason Thomas
+
+    Version:
+    1.0 - 1/22/21 - Script Created
+#>
 Begin {
     $path = "HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Parameters"
     $ServiceName = 'tzautoupdate'
@@ -22,7 +32,7 @@ Process {
         }
     }
 }
-    function Disable-LocationServices {
+function Disable-LocationServices {
         $LocationKey = "HKLM:\SOFTWARE\Microsoft\CurrentVersion\CapabilityAccessManager\ConsetStore\location"
         Set-ItemProperty -Path $LocationKey -Name "Value" -Value "Deny" -Type "String"
 
