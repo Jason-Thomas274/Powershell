@@ -1,7 +1,12 @@
+<#
+.SYNOPSIS
+    -When ran, waits for external USB drive plug in
+    -Encrypts device to be set up with bitlocker standards
+    -Recovery key saved to local/cloud locations
+.NOTES
+    Author: Jason Thomas
+#>
 Import-Module BitLocker
-#Start-Process powershell -Verb runAs
-
-#Display current UserProfiles
 set-location C:\Users
 Get-ChildItem
 
